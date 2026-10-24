@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porumbei</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Porumbei & Draggable Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- CDN-uri Corecte pentru Pictograme (Boxicons + FontAwesome) -->
+  <link href="https://unpkg.com" rel="stylesheet">
+  <link href="https://cloudflare.com" rel="stylesheet"/>
 </head>
-<!DOCTYPE html>
+<body>
+
+  <!-- MENIUL DRAGGABLE (Apare flotant pe ecran) -->
+  <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
 <head>
@@ -72,48 +78,162 @@
   </script>
 </body>
 </html>
-<body>
-   <section class="hero">
-    <div class="container"> 
+
+  <!-- CONȚINUTUL PRINCIPAL AL SITE-ULUI (Împinge footer-ul la bază) -->
+  <main class="main-content">
+    
+    <section class="hero">
+      <div class="container"> 
         <div class="card">
-            <h1>Porumbei</h1>
-            <p>Porumbeii sunt păsări care aparțin familiei Columbidae.</p>
-        </div>
-    </div>
-   </section>
-   <section class="about">
-    <div class="container">
-        <div class="card">
-            <h2>Despre Porumbei</h2>
-            <p>Porumbeii sunt păsări care aparțin familiei Columbidae. Aceștia sunt cunoscuți pentru abilitatea lor de a se întoarce la cuibul lor, chiar și după ce au fost transportați la distanțe mari. Porumbeii au fost folosiți de-a lungul istoriei pentru mesaje și competiții de viteză.</p>
-        </div>
-    </div>
-   </section>
-   <section class="Species">
-    <div class="container">
-        <div class="card">
-            <h2>Specii de Porumbei</h2>
-            <ul>
-                <li>Porumbelul domestic (Columba livia domestica)</li>
-                <li>Porumbelul sălbatic (Columba livia)</li>
-                <li>Porumbelul de munte (Columba oenas)</li>
-                <li>Porumbelul de pădure (Columba palumbus)</li>
-            </ul>
-        </div>
-    </div>
+          <!-- În secțiunea Hero -->
+<h1><i class="bx bxs-graduation"></i> Porumbei</h1>
+
+<!-- În secțiunea Despre Porumbei -->
+<h2><i class="bx bxs-info-circle"></i> Despre Porumbei</h2>
+
+<!-- În secțiunea Specii de Porumbei -->
+<h2><i class="bx bxs-category"></i> Specii de Porumbei</h2>
+
+<!-- În secțiunea Ce mănâncă porumbeii? -->
+<h2><i class="bx bxs-dish"></i> Ce mănâncă porumbeii?</h2>
+
+      </div>
     </section>
-    <section class="Ce_mananca">
-        <div class="container">
-            <div class="card">
-                <h2>Ce mănâncă porumbeii?</h2>
-                <p>Porumbeii se hrănesc cu semințe, fructe și legume. De asemenea, pot consuma și insecte mici sau alte surse de proteine.</p>
-            </div>
+
+    <section class="about">
+      <div class="container">
+        <div class="card">
+          <h2>Despre Porumbei</h2>
+          <p>Porumbeii sunt păsări care aparțin familiei Columbidae. Aceștia sunt cunoscuți pentru abilitatea lor de a se întoarce la cuibul lor, chiar și după ce au fost transportați la distanțe mari. Porumbeii au fost folosiți de-a lungul istoriei pentru mesaje și competiții de viteză.</p>
         </div>
+      </div>
     </section>
+
+    <section class="species">
+      <div class="container">
+        <div class="card">
+          <h2>Specii de Porumbei</h2>
+          <ul>
+            <li>Porumbelul domestic (Columba livia domestica)</li>
+            <li>Porumbelul sălbatic (Columba livia)</li>
+            <li>Porumbelul de munte (Columba oenas)</li>
+            <li>Porumbelul de pădure (Columba palumbus)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="ce-mananca">
+      <div class="container">
+        <div class="card">
+          <h2>Ce mănâncă porumbeii?</h2>
+          <p>Porumbeii se hrănesc cu semințe, fructe și legume. De asemenea, pot consuma și insecte mici sau alte surse de proteine.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER-UL SITE-ULUI (Rămâne mereu jos) -->
+  <footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <i class="fab fa-slack"></i>
+          <span class="logo_name">CodingLab</span>
+        </div>
+        <div class="media-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Linkedin"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Company</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Get started</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Services</li>
+          <li><a href="#">App design</a></li>
+          <li><a href="#">Web design</a></li>
+          <li><a href="#">Logo design</a></li>
+          <li><a href="#">Banner design</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My account</a></li>
+          <li><a href="#">Preferences</a></li>
+          <li><a href="#">Purchase</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Courses</li>
+          <li><a href="#">HTML & CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Photography</a></li>
+          <li><a href="#">Photoshop</a></li>
+        </ul>
+        <ul class="box input-box">
+          <li class="link_name">Subscribe</li>
+          <li><input type="email" placeholder="Enter your email" required></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright © 2026 <a href="#">CodingLab.</a> All rights reserved</span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & conditions</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT JAVASCRIPT REPARAT -->
+  <script>
+    const nav = document.querySelector(".draggable-nav"),
+          toggleBtn = nav.querySelector(".toggle-btn");
+
+    // Deschidere/Închidere meniu circular
+    toggleBtn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    // Cod JavaScript stabil pentru mișcarea meniului (drag)
+    function onDrag({ movementY }) {
+      const navStyle = window.getComputedStyle(nav),
+            navTop = parseInt(navStyle.top),
+            navHeight = parseInt(navStyle.height),
+            windHeight = window.innerHeight;
+
+      let newTop = navTop + movementY;
+      
+      // Limitează mișcarea ca să nu iasă din ecran sus sau jos
+      if (newTop < 1) newTop = 1;
+      if (newTop > windHeight - navHeight) newTop = windHeight - navHeight;
+      
+      nav.style.top = `${newTop}px`;
+    }
+
+    nav.addEventListener("mousedown", () => {
+      nav.addEventListener("mousemove", onDrag);
+    });
+
+    window.addEventListener("mouseup", () => {
+      nav.removeEventListener("mousemove", onDrag);
+    });
+
+    nav.addEventListener("mouseleave", () => {
+      nav.removeEventListener("mousemove", onDrag);
+    });
+  </script>
 </body>
-<footer>
-    <div class="container">
-        <p>&copy; 2024 Porumbei. Toate drepturile rezervate.</p>
-    </div>
-</footer>
-</html> 
+</html>

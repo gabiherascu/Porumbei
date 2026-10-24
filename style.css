@@ -1,43 +1,151 @@
+/* ==========================================================================
+   1. IMPORTURI FONTS & CONFIGURARE GLOBALĂ
+   ========================================================================== */
+@import url('https://googleapis.com');
 
-.card {
-    background:#A9A9A9;
-    padding: 24px;       /* Modificat din : în ; */
-    border-radius: 10px;
-}
-.html {
-    background: #2b22ac;
-    padding: 24px;       /* Modificat din : în ; */
-}
-.about {
-    background: #A9A9A9;
-    padding: 24px;       /* Modificat din : în ; */
-    border-radius: 10px;
-}
-.Species {
-    background: #A9A9A9;
-    padding: 24px;       /* Modificat din : în ; */
-    border-radius: 10px;
-}
-.Ce_mananca {
-    background: #A9A9A9;
-    padding: 24px;       /* Modificat din : în ; */
-    border-radius: 10px;
-}
-.Ce_face {
-    background: #113b7a;
-    padding: 24px;       /* Modificat din : în ; */
-    border-radius: 10px;
-}
- *{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-body{
-  height: 100vh;
-  background: #17a2b8;
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #EEECEB;
+  color: #333;
+}
+
+/* Structură conținut principal */
+/* ==========================================================================
+   2. STILURI CARDURI ACADEMICE ȘI MODERNE
+   ========================================================================== */
+/* Container general cu așezare pe grilă inteligentă */
+.main-content {
+  flex: 1;
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Spațiu egal între secțiuni */
+}
+
+/* Cardul de bază reimaginat (Stil curat, rotunjit și premium) */
+.card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(20, 11, 92, 0.04);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+  position: relative;
   overflow: hidden;
 }
+
+/* Efect de interacțiune când treci cu mouse-ul peste card (Hover) */
+.card:hover {
+  transform: translateY(-6px); /* Cardul se ridică discret */
+  box-shadow: 0 20px 40px rgba(14, 36, 49, 0.08);
+  border-color: rgba(20, 11, 92, 0.15);
+}
+
+/* Linie decorativă verticală în stânga fiecărui card */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #140B5C; /* Culoarea principală din footer */
+  opacity: 0.8;
+  transition: width 0.3s ease;
+}
+
+.card:hover::before {
+  width: 8px; /* Linia devine mai pronunțată la hover */
+}
+
+/* Design titluri din interiorul cardurilor */
+.card h1, .card h2 {
+  font-size: 24px;
+  color: #140B5C;
+  font-weight: 600;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Spațiu între pictogramă și text */
+}
+
+/* Stil pentru iconițele Boxicons din titluri */
+.card h1 i, .card h2 i {
+  font-size: 28px;
+  color: #17a2b8; /* Culoarea de accent cyan */
+  transition: transform 0.3s ease;
+}
+
+.card:hover h1 i, .card:hover h2 i {
+  transform: scale(1.15) rotate(5deg); /* Iconița pulsează la hover */
+}
+
+/* Design text paragraf */
+.card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4a5568;
+  font-weight: 400;
+}
+
+/* Stil special pentru listele din secțiunea de Specii */
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.card ul li {
+  font-size: 16px;
+  color: #4a5568;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #17a2b8;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.card ul li:hover {
+  background: #edf2f7;
+  transform: translateX(5px); /* Listele se deplasează ușor la dreapta */
+}
+
+/* ==========================================================================
+   2.1 PERSONALIZĂRI OPȚIONALE PENTRU ANUMITE SECȚIUNI (TEMATICE)
+   ========================================================================== */
+/* Prima secțiune (Hero) - Fundal de accent, text alb */
+.hero .card {
+  background: linear-gradient(135deg, #140B5C 0%, #2b22ac 100%);
+  border: none;
+}
+.hero .card::before { background: #17a2b8; }
+.hero .card h1, .hero .card p, .hero .card h1 i { color: #ffffff; }
+
+/* Secțiunea „Ce mănâncă” - Tonalitate caldă, naturală */
+.ce-mananca .card {
+  background: #fbfbfd;
+}
+.ce-mananca .card::before { background: #ff9f43; } /* Linie portocalie */
+.ce-mananca .card h2 i { color: #ff9f43; }
+
+/* ==========================================================================
+   3. MENIU PLUTITOR DRAGGABLE (NAVIGATION)
+   ========================================================================== */
 nav{
   position: absolute;
   top: 20px;
@@ -99,4 +207,221 @@ nav.open .nav-content span{
 }
 .nav-content span a:hover i{
   opacity: 1;
+}
+/* ==========================================================================
+   4. STRUCTURĂ FOOTER MODERN
+   ========================================================================== */
+footer {
+  background: #140B5C;
+  width: 100%;
+  margin-top: auto;
+  position: relative;
+}
+
+footer .content {
+  max-width: 1250px;
+  margin: auto;
+  padding: 40px 40px 30px 40px;
+}
+
+footer .content .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #AFAFB6;
+  padding-bottom: 20px;
+}
+
+.content .top .logo-details {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.content .top .media-icons {
+  display: flex;
+}
+
+.content .top .media-icons a {
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.top .media-icons a:nth-child(1) { background: #4267B2; }
+.top .media-icons a:nth-child(1):hover { color: #4267B2; background: #fff; }
+
+.top .media-icons a:nth-child(2) { background: #1DA1F2; }
+.top .media-icons a:nth-child(2):hover { color: #1DA1F2; background: #fff; }
+
+.top .media-icons a:nth-child(3) { background: #E1306C; }
+.top .media-icons a:nth-child(3):hover { color: #E1306C; background: #fff; }
+
+.top .media-icons a:nth-child(4) { background: #0077B5; }
+.top .media-icons a:nth-child(4):hover { color: #0077B5; background: #fff; }
+
+.top .media-icons a:nth-child(5) { background: #FF0000; }
+.top .media-icons a:nth-child(5):hover { color: #FF0000; background: #fff; }
+
+footer .content .link-boxes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+footer .content .link-boxes .box {
+  width: 100%;
+}
+
+.content .link-boxes .box .link_name {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.link-boxes .box .link_name::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 35px;
+  background: #fff;
+}
+
+.content .link-boxes .box li {
+  margin: 8px 0;
+  list-style: none;
+}
+
+.content .link-boxes .box li a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.content .link-boxes .box li a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.link-boxes .input-box input {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border: 2px solid #AFAFB6;
+  background: #140B5C;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.link-boxes .input-box input::placeholder {
+  color: #AFAFB6;
+  font-size: 14px;
+}
+
+.link-boxes .input-box input[type="button"] {
+  background: #fff;
+  color: #140B5C;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.link-boxes .input-box input[type="button"]:hover {
+  background: #AFAFB6;
+}
+
+footer .bottom-details {
+  width: 100%;
+  background: #0F0844;
+}
+
+footer .bottom-details .bottom_text {
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a {
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.bottom-details .bottom_text a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.bottom-details .bottom_text a {
+  margin-right: 10px;
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES (OPTIMIZARE RESPONSIVE MOBILE)
+   ========================================================================== */
+@media (max-width: 900px) {
+  footer .content .link-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  footer .content .link-boxes .input-box {
+    grid-column: span 3;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .content .top {
+    flex-direction: column;
+    gap: 20px;
+  }
+  footer .content .link-boxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer .content .link-boxes .input-box {
+    grid-column: span 2;
+  }
+  footer .bottom-details .bottom_text {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  footer .content .link-boxes {
+    grid-template-columns: 1fr;
+  }
+  footer .content .link-boxes .input-box {
+    grid-column: span 1;
+  }
 }
